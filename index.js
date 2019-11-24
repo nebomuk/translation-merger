@@ -79,5 +79,29 @@ var text = text.replace(/&/g, "&amp;").
 
     return text;
 }
+    },
+    
+    mounted() {
+    if (localStorage.message1) {
+      this.message1 = localStorage.message1;
     }
+      if (localStorage.message2) {
+      this.message2 = localStorage.message2;
+    }
+    if (localStorage.result) {
+      this.result = localStorage.result;
+    }
+  },
+  watch: {
+    message1(updated) {
+      localStorage.message1 = updated;
+    },
+    message2(updated) {
+      localStorage.message2 = updated;
+    },
+    result(updated) {
+      localStorage.result = updated;
+    },
+    
+  }
 });
