@@ -1,33 +1,43 @@
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
       <div id="app">
-        <textarea v-model="message1"  rows="15" cols="50">
+      <div class="field">
+  <label class="label">First Text</label>
+        <textarea class="textarea is-primary" v-model="message1"  rows="15" cols="50">
 </textarea>
- <textarea v-model="message2" rows="15" cols="50">
+</div>
+<div class="field">
+  <label class="label">Second Text</label>
+ <textarea class="textarea is-primary" v-model="message2" rows="15" cols="50">
  </textarea>
+ </div>
 
- <textarea rows="15" cols="50">
+<div class="field">
+  <label class="label">Result</label>
+ <textarea class="textarea is-success" rows="15" cols="50">
 {{result}}
 </textarea>   
-<div>
-  <button v-on:click="combineTexts">Combine texts</button>
+</div>
+<div class="field">
+  <button class="button is-primary" v-on:click="combineTexts">Combine texts</button>
 </div>
 
-<div>
-  <button v-on:click="mergeParagraphFirst">merge paragraph with next in 1.</button>
-  <input type="text" v-model="paragraphToMergeFirst"/>
+<div class="field is-grouped">
+  <button class="button" v-on:click="mergeParagraphFirst">merge paragraph with next in 1.</button>
+  <input class="input" type="number" v-model="paragraphToMergeFirst"/>
 </div>
-<div>
-  <button v-on:click="mergeParagraphSecond">merge paragraph with next in 2.</button>
-  <input type="text" v-model="paragraphToMergeSecond"/>
+<div class="field is-grouped">
+  <button class="button" v-on:click="mergeParagraphSecond">merge paragraph with next in 2.</button>
+  <input class="input" type="number" v-model="paragraphToMergeSecond"/>
 </div>
 
-<div>
-  <button v-on:click="showResultInNewWindow">open new window</button>
+<div class="field">
+  <button class="button is-link" v-on:click="showResultInNewWindow">open new window</button>
 </div>
 
 </div>
