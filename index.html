@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+      <div id="app">
+        <textarea v-model="message1"  rows="15" cols="50">
+</textarea>
+ <textarea v-model="message2" rows="15" cols="50">
+ </textarea>
+
+ <textarea rows="15" cols="50">
+{{result}}
+</textarea>   
+<div>
+  <button v-on:click="combineTexts">Combine texts</button>
+</div>
+
+<div>
+  <button v-on:click="mergeParagraphFirst">merge paragraph with next in 1.</button>
+  <input type="text" v-model="paragraphToMergeFirst"/>
+</div>
+<div>
+  <button v-on:click="mergeParagraphSecond">merge paragraph with next in 2.</button>
+  <input type="text" v-model="paragraphToMergeSecond"/>
+</div>
+
+<div>
+  <button v-on:click="showResultInNewWindow">open new window</button>
+</div>
+
+</div>
+        
+
+
+<script src="index.js"></script>
+    </body>
+</html>
