@@ -6,6 +6,7 @@
     </head>
     <body>
       <div id="app">
+      <div v-if="resultInThisWindow==='' " class="field">
       <div class="field">
   <label class="label">First Text</label>
         <textarea class="textarea is-primary" v-model="message1"  rows="15" cols="50">
@@ -39,8 +40,15 @@
 <div class="field">
   <button class="button is-link" v-on:click="showResultInNewWindow">open new window</button>
 </div>
-
 </div>
+<div class="field">
+  <button class="button is-link" v-on:click="toggleResultFullPage">toggle result full page</button>
+</div>
+<div class="field"  v-html="resultInThisWindow">
+</div>
+
+<!-- app--> 
+</div> 
         
 
 
