@@ -5,7 +5,8 @@ var app = new Vue({
         message2: "A\n\nB\n\nC\n\nD",
         paragraphToMergeFirst : 0,
         paragraphToMergeSecond : 0,
-        result: ''
+        result: '',
+        resultInThisWindow: ""
         },
     
   methods: {
@@ -17,6 +18,18 @@ var app = new Vue({
 
     newWindow.document.body.innerHTML = this.plainTextToHtml(this.result);
     },
+    toggleResultFullPage : function()
+  {
+  if(this.resultInThisWindow === "")
+  {
+  	    this.resultInThisWindow =  this.plainTextToHtml(this.result);
+
+  }
+  else 
+  {
+  	this.resultInThisWindow = "";
+  }
+  },
   
     combineTexts: function () {
         
